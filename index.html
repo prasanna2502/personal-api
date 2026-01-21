@@ -248,6 +248,35 @@
             font-style: italic;
         }
 
+        /* Photo layout & styling */
+        .visual-note {
+            /* keep existing visual-note look but center the image */
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+            background: transparent; /* let the image be the primary visual */
+            border-left: none;
+        }
+
+        .visual-note picture,
+        .visual-note .profile-photo {
+            width: 100%;
+            max-width: 420px; /* reasonable upper bound for large screens */
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12);
+            object-fit: cover;
+            border: 4px solid rgba(255,255,255,0.85);
+            display: block;
+        }
+
+        @media (max-width: 480px) {
+            .visual-note picture,
+            .visual-note .profile-photo {
+                max-width: 280px;
+            }
+        }
+
         /* Icons */
         .inline-icon {
             display: inline-block;
@@ -351,7 +380,7 @@
     <div class="hero">
         <div class="emoji">📖</div>
         <h1>Prasanna Kumar (Jay)'s Personal API</h1>
-        <p class="subtitle">A quick guide on everything you need to know about working with me! My background, values, quirks, what I'm good at and where I'm still growing. This is my personal API.</p>
+        <p class="subtitle">A quick guide on everything you need to know about working with me! My background, values, quirks, what I'm good at and where I'm still growing. This is my personal AP[...]</p>
     </div>
 
     <!-- Main Content -->
@@ -363,7 +392,7 @@
                 <h2 class="section-title">About Me</h2>
             </div>
             <div class="content-card">
-                <p>Hi! I'm Prasanna Kumar, though most people call me Jay. I'm an Engineering Manager at Meta Reality Labs, and I thrive at the intersection of technology and business—specifically bringing together the right people to tackle complex problems where success isn't guaranteed. That uncertainty is what keeps me hooked; I love the challenge of navigating ambiguity and building solutions that matter. What truly energizes me, though, is helping people on their journey to become the best version of themselves—there's nothing more rewarding than watching someone grow and succeed in their own way.</p>
+                <p>Hi! I'm Prasanna Kumar, though most people call me Jay. I'm an Engineering Manager at Meta Reality Labs, and I thrive at the intersection of technology and business—specifica[...]</p>
             </div>
         </section>
 
@@ -374,22 +403,34 @@
                 <h2 class="section-title">Life Story</h2>
             </div>
             <div class="content-card">
-                <p>I'm originally from Pondicherry, a quaint coastal town in Southern India that was a French colony until the 1950s. Growing up, I played street cricket like most Indian boys, but I was also the kid reading books under the shade of catamarans lined along the seashore - surrounded by colonial French architecture and a unique blend of cultures. After college in Chennai, I moved to Chicago to work for Groupon, but when I visited Seattle on a business trip, I fell immediately in love with the mountains and decided to make this city my home.</p>
+                <p>I'm originally from Pondicherry, a quaint coastal town in Southern India that was a French colony until the 1950s. Growing up, I played street cricket like most Indian boys, bu[...]</p>
 
-                <p>A quick note on my name: I sometimes go by "Jay" because people find Prasanna difficult to pronounce. While I believe taking the effort to pronounce someone's name correctly shows respect for their journey and origins, I also want to make it easy for people. Jay is actually the shortened form of my father's first initial - in India, we add the first letter of your father's name to your own (like "J. Prasanna Kumar"). By choosing Jay, I'm reminded daily of my humble origins and the struggles my parents overcame to get me where I am today.</p>
+                <p>A quick note on my name: I sometimes go by "Jay" because people find Prasanna difficult to pronounce. While I believe taking the effort to pronounce someone's name correctly sh[...]</p>
 
-                <p>I'm married to Nizha, a brilliant and beautiful person who I have the honor of calling my wife. We have three kids: seven-year-old identical twin girls and a one-year-old son. When I'm not working, I'm spending time with them doing all sorts of bucolic things - cooking, gardening, taking on ambitious home projects and failing spectacularly. I love cooking and learning about different cuisines, improvising with whatever ingredients I have on hand. My friends say I should have pursued culinary school after tasting my food - though that might just be because they want to stay friends and keep getting invited to dinner.</p>
+                <p>I'm married to Nizha, a brilliant and beautiful person who I have the honor of calling my wife. We have three kids: seven-year-old identical twin girls and a one-year-old son. [...] 
 
                 <h3>Some fun facts:</h3>
                 <ul>
                     <li>Despite growing up surrounded by French influence, I never learned French</li>
                     <li>I attended Burning Man in 2023, the wildest festival on earth by certain accounts.</li>
-                    <li>I'm an endurance biking enthusiast and have ridden the Seattle to Portland 200+ mile journey multiple times - once even with a broken wrist and a partially working gear on my bike</li>
+                    <li>I'm an endurance biking enthusiast and have ridden the Seattle to Portland 200+ mile journey multiple times - once even with a broken wrist and a partially working gear on[...]</li>
                     <li>I don't quit easily, whether it's a bike ride or a complex problem at work</li>
                 </ul>
             </div>
             <div class="visual-note">
-                <img src="">
+              <picture>
+                <source type="image/webp"
+                  srcset="images/jay-portland-320.webp 320w, images/jay-portland-640.webp 640w, images/jay-portland-1200.webp 1200w"
+                  sizes="(max-width: 480px) 90vw, (max-width: 768px) 60vw, 320px">
+                <img
+                  src="images/jay-portland-1200.jpg"
+                  srcset="images/jay-portland-320.jpg 320w, images/jay-portland-640.jpg 640w, images/jay-portland-1200.jpg 1200w"
+                  sizes="(max-width: 480px) 90vw, (max-width: 768px) 60vw, 320px"
+                  alt="Prasanna (Jay) smiling while cycling, pointing at an 'Entering Portland' sign"
+                  class="profile-photo"
+                  loading="lazy"
+                  decoding="async">
+              </picture>
             </div>
         </section>
 
@@ -403,19 +444,19 @@
             <div class="timeline-item">
                 <h3>Meta Reality Labs</h3>
                 <div class="timeline-date">April 2021 - Present | Engineering Manager, OS Insights</div>
-                <p>Built the OS Insights team from scratch to ship Meta VR's telemetry, tracing, and logging infrastructure. Scaled it to handle petabyetes of data at >99% reliability, enabling the VR business to scale from a few hundred thousand users to tens of millions of users</p>
+                <p>Built the OS Insights team from scratch to ship Meta VR's telemetry, tracing, and logging infrastructure. Scaled it to handle petabyetes of data at >99% reliability, enabling t[...]</p>
             </div>
 
             <div class="timeline-item">
                 <h3>Samsung Electronics</h3>
                 <div class="timeline-date">February 2017 - April 2021 | Engineering Manager / Senior Engineering Manager</div>
-                <p>One of the founding engineers building Samsung.com from the ground up. Scaled from building core platform components myself to leading 40+ engineers delivering critical services (shopping cart, identity, catalog, promotions).</p>
+                <p>One of the founding engineers building Samsung.com from the ground up. Scaled from building core platform components myself to leading 40+ engineers delivering critical service[...]</p>
             </div>
 
             <div class="timeline-item">
                 <h3>Groupon</h3>
                 <div class="timeline-date">2012 - 2017 | Staff Engineer → Engineering Manager</div>
-                <p>Hired as the 5th engineer in Groupon's Chennai center, built core platform services for config management, internationalization, and monitoring that supported 70+ microservices. Moved to Chicago in 2015 to scale Groupon Goods from 300 to 200K+ listings. Transitioned from Staff Engineer to Engineering Manager after realizing I was naturally drawn to helping people succeed.</p>
+                <p>Hired as the 5th engineer in Groupon's Chennai center, built core platform services for config management, internationalization, and monitoring that supported 70+ microservices[...]</p>
             </div>
 
             <div class="timeline-item">
@@ -432,9 +473,9 @@
                 <h2 class="section-title">How I View Success</h2>
             </div>
             <div class="content-card">
-                <p>Great leaders inspire and create energy by setting a vision and aligning everyone to work towards achieving it. This is what I strive for every day. I don't just want people to be satisfied with their work - I want them to be excited and passionate about it. This happens when someone's <strong>skills + values + mission</strong> align. Not everyone knows this alignment from the start, but great leaders build teams where everyone discovers this alignment. When such a team comes together, they solve problems everyone else thought were impossible.</p>
+                <p>Great leaders inspire and create energy by setting a vision and aligning everyone to work towards achieving it. This is what I strive for every day. I don't just want people to[...]</p>
 
-                <p>Achieving business outcomes is the key purpose for why a team exists. My role as a leader is to drive clarity around this business purpose and build a high-performing team to achieve it as efficiently as possible. I know it's working when the team exhibits high trust, psychological safety, ownership, and consistent execution.</p>
+                <p>Achieving business outcomes is the key purpose for why a team exists. My role as a leader is to drive clarity around this business purpose and build a high-performing team to a[...]</p>
 
                 <p>I feel successful when I've brought clarity to a messy situation or when I help my team ship something impactful for the business.</p>
             </div>
@@ -447,9 +488,9 @@
                 <h2 class="section-title">How I Communicate</h2>
             </div>
             <div class="content-card">
-                <p><strong>My philosophy:</strong> Communication is the biggest part of my job, so I'm deliberate about it. I default to written communication - docs, posts, and structured artifacts over meetings and 1:1 conversations. My framework: if something needs to be understood by more than 3 people and takes more than 10 minutes to explain individually, write a doc.</p>
+                <p><strong>My philosophy:</strong> Communication is the biggest part of my job, so I'm deliberate about it. I default to written communication - docs, posts, and structured artifa[...]</p>
 
-                <p><strong>In meetings, I'm usually quiet</strong> because I'm actively listening and understanding everyone's role in the play. I speak up when asked directly, when the group needs direction, or when I sense the meeting is off track.</p>
+                <p><strong>In meetings, I'm usually quiet</strong> because I'm actively listening and understanding everyone's role in the play. I speak up when asked directly, when the group nee[...]</p>
 
                 <div class="highlight-box">
                     <h4>How to reach me:</h4>
@@ -461,7 +502,7 @@
                     </ul>
                 </div>
 
-                <p><strong>Feedback:</strong> Coaching is verbal and immediate. Sensitive feedback is written for precision but delivered face-to-face, with a heads-up so you're ready to listen actively.</p>
+                <p><strong>Feedback:</strong> Coaching is verbal and immediate. Sensitive feedback is written for precision but delivered face-to-face, with a heads-up so you're ready to listen a[...]</p>
 
                 <p><strong>I know asking for docs can be frustrating at first</strong>, but it scales. When people resist, I help by creating a starter doc with structure to make it easier.</p>
             </div>
@@ -474,7 +515,7 @@
                 <h2 class="section-title">My Strengths</h2>
             </div>
             <div class="content-card">
-                <p>I'm good at resolving technical and interpersonal conflicts to move projects forward. I thrive in ambiguous, high-risk/high-reward problems - bringing clarity through data and frameworks. I excel at building and scaling teams by finding the right talent as force multipliers. People come to me to "connect the dots" - mapping relationships between technical solutions and business problems, strategies and risks. What drives me most is developing people to become their best selves.</p>
+                <p>I'm good at resolving technical and interpersonal conflicts to move projects forward. I thrive in ambiguous, high-risk/high-reward problems - bringing clarity through data and [...]</p>
             </div>
         </section>
 
@@ -485,9 +526,9 @@
                 <h2 class="section-title">My Growth Areas</h2>
             </div>
             <div class="content-card">
-                <p><strong>Managing up and executive communication.</strong> I tend to have deep technical understanding of problems, and communicating context to executives without losing its essence takes time for me. I'm working on distilling technical depth to executive altitude while preserving what matters.</p>
+                <p><strong>Managing up and executive communication.</strong> I tend to have deep technical understanding of problems, and communicating context to executives without losing its es[...]</p>
 
-                <p><strong>Scaling operational load.</strong> I sometimes take on operational tasks (tracking data, communications) to let my team focus on technical design and building systems. But this prevents me from spending time on long-term thinking - vision, industry trends, and identifying opportunities for the organization. I'm addressing this by setting expectations upfront about what E2E ownership means, so people understand that owning a project includes the grunt work too.</p>
+                <p><strong>Scaling operational load.</strong> I sometimes take on operational tasks (tracking data, communications) to let my team focus on technical design and building systems. [...]</p>
             </div>
         </section>
 
@@ -498,15 +539,15 @@
                 <h2 class="section-title">What I Expect from People I Support</h2>
             </div>
             <div class="content-card">
-                <p><strong>Think beyond yourself.</strong> Stellar performance means caring about the team and org, not just your own tasks. Help solve problems even when you're not explicitly in charge. Be thoughtful about trade-offs and uncompromising on quality.</p>
+                <p><strong>Think beyond yourself.</strong> Stellar performance means caring about the team and org, not just your own tasks. Help solve problems even when you're not explicitly in[...]</p>
 
-                <p><strong>Be proactive, not passive.</strong> If you're waiting to be told what to do, you're not doing a great job. Seek out information and ask questions proactively. If you're building something that leaves messes for others to clean up, that's a big miss - it shows you don't care about your teammates.</p>
+                <p><strong>Be proactive, not passive.</strong> If you're waiting to be told what to do, you're not doing a great job. Seek out information and ask questions proactively. If you're[...]</p>
 
-                <p><strong>Practice radical candor.</strong> I follow radical candor and expect the same from you. Give me hard feedback without beating around the bush. I'm not perfect and I make mistakes, but I love overcoming problems and becoming better. If you're challenging my decision upfront, I'll happily spend an hour discussing it with you - to understand your perspective and change my decision, change your mind, or make sure you're committing with reservations understood.</p>
+                <p><strong>Practice radical candor.</strong> I follow radical candor and expect the same from you. Give me hard feedback without beating around the bush. I'm not perfect and I mak[...]</p>
 
-                <p><strong>Communicate in structured ways.</strong> I expect you to write docs and use structured artifacts. If you struggle with blank-page syndrome, I'll create scaffolds - team wikis, docs, tasks - for you to contribute to rather than spinning up docs endlessly.</p>
+                <p><strong>Communicate in structured ways.</strong> I expect you to write docs and use structured artifacts. If you struggle with blank-page syndrome, I'll create scaffolds - team[...]</p>
 
-                <p><strong>High autonomy with over-alignment.</strong> I expect you to work with a very high level of autonomy, but with over-alignment across stakeholders. I like building tightly knit teams where everyone looks out for others and goes out of their way to help.</p>
+                <p><strong>High autonomy with over-alignment.</strong> I expect you to work with a very high level of autonomy, but with over-alignment across stakeholders. I like building tightl[...]</p>
             </div>
         </section>
 
@@ -517,9 +558,9 @@
                 <h2 class="section-title">How I Give and Receive Feedback</h2>
             </div>
             <div class="content-card">
-                <p><strong>My philosophy:</strong> I follow radical candor. I give continuous feedback, not just in 1:1s, but I'm focused - usually 1-2 positive items and 1 constructive item, not a laundry list.</p>
+                <p><strong>My philosophy:</strong> I follow radical candor. I give continuous feedback, not just in 1:1s, but I'm focused - usually 1-2 positive items and 1 constructive item, not[...]</p>
 
-                <p><strong>I always start with the positive.</strong> Before giving critical feedback, I deliberately talk about positive things or thank you for something you did well. People listen to critical feedback better when they trust that I value their work.</p>
+                <p><strong>I always start with the positive.</strong> Before giving critical feedback, I deliberately talk about positive things or thank you for something you did well. People li[...] </p>
 
                 <div class="highlight-box">
                     <h4>How I deliver it:</h4>
@@ -530,11 +571,11 @@
                     </ul>
                 </div>
 
-                <p><strong>I tailor feedback to you:</strong> For junior folks, I'm more prescriptive. For senior folks, I give room to come up with your own response while supporting whatever you need. No rigid framework - it's fluid based on person and situation.</p>
+                <p><strong>I tailor feedback to you:</strong> For junior folks, I'm more prescriptive. For senior folks, I give room to come up with your own response while supporting whatever yo[...] </p>
 
-                <p><strong>Public vs. private:</strong> I praise publicly and criticize privately. Challenge or debate me in meetings (without derailing the agenda), but save personal feedback for 1:1s.</p>
+                <p><strong>Public vs. private:</strong> I praise publicly and criticize privately. Challenge or debate me in meetings (without derailing the agenda), but save personal feedback fo[...] </p>
 
-                <p><strong>How to give ME feedback:</strong> Be straight and start with what I'm not doing well, then provide context by explaining the situation and my behavior. The sooner you contact me about something non-optimal, the better - it helps me adjust and make positive impact. DM me about this stuff.</p>
+                <p><strong>How to give ME feedback:</strong> Be straight and start with what I'm not doing well, then provide context by explaining the situation and my behavior. The sooner you c[...] </p>
             </div>
         </section>
 
@@ -545,11 +586,11 @@
                 <h2 class="section-title">What Drives Me Nuts</h2>
             </div>
             <div class="content-card">
-                <p><strong>A job not well done.</strong> Compromising on quality, not thinking through repercussions, and leaving a mess for others to clean up. This shows you don't care about your teammates, and I have zero tolerance for that.</p>
+                <p><strong>A job not well done.</strong> Compromising on quality, not thinking through repercussions, and leaving a mess for others to clean up. This shows you don't care about yo[...] </p>
 
-                <p><strong>Saying you'll do something and not doing it on time.</strong> Delays happen - I'm okay with that. But manage it upfront. Don't let me find out at the deadline that something isn't done.</p>
+                <p><strong>Saying you'll do something and not doing it on time.</strong> Delays happen - I'm okay with that. But manage it upfront. Don't let me find out at the deadline that some[...] </p>
 
-                <p><strong>Lack of ownership.</strong> When people pass things along saying "not my problem" and don't show up for their team, it drives me nuts. We're a team - we need to look out for each other.</p>
+                <p><strong>Lack of ownership.</strong> When people pass things along saying "not my problem" and don't show up for their team, it drives me nuts. We're a team - we need to look ou[...] </p>
             </div>
         </section>
 
@@ -560,16 +601,16 @@
                 <h2 class="section-title">Things I Do That May Annoy You</h2>
             </div>
             <div class="content-card">
-                <p><strong>I nudge about document hygiene.</strong> I might nudge you often to maintain proper document hygiene - resolving comments if they've been addressed, recording sign-offs, publishing in the right groups for visibility. I know it can feel nitpicky, but it's how we scale communication.</p>
+                <p><strong>I nudge about document hygiene.</strong> I might nudge you often to maintain proper document hygiene - resolving comments if they've been addressed, recording sign-offs[...]</p>
 
-                <p><strong>I ask for data even when you have strong opinions.</strong> It's not because I don't believe in your expertise - I do. But I want to form my own opinion, and data is the best way to be objective about it. I know this can feel like analysis paralysis, but I have strategies to avoid that trap: making deliberate milestones to gather data, building prototypes to validate hypotheses quickly, or looking for proxy metrics that show we're moving in the right direction.</p>
+                <p><strong>I ask for data even when you have strong opinions.</strong> It's not because I don't believe in your expertise - I do. But I want to form my own opinion, and data is th[...] </p>
             </div>
         </section>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>Last updated: January 2026</p>
+        <p>Last updated: 2026-01-21 20:24:41</p>
         <p style="margin-top: 1rem; opacity: 0.6;">Made with care by Jay</p>
     </footer>
 </body>
