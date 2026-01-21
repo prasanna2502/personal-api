@@ -257,8 +257,9 @@
 
         /* Highlight boxes */
         .highlight-box {
-            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-blue) 100%);
-            color: white;
+            background: linear-gradient(135deg, #f0f7ff 0%, #e6f2ff 100%);
+            border: 2px solid var(--primary-blue);
+            color: var(--text-dark);
             padding: 2rem;
             border-radius: 12px;
             margin: 2rem 0;
@@ -268,14 +269,19 @@
             font-family: 'Crimson Pro', serif;
             font-size: 1.3rem;
             margin-bottom: 1rem;
+            color: var(--primary-navy);
         }
 
         .highlight-box ul li {
-            color: rgba(255, 255, 255, 0.95);
+            color: var(--text-dark);
         }
 
         .highlight-box ul li:before {
-            color: var(--accent-gold);
+            color: var(--primary-blue);
+        }
+
+        .highlight-box strong {
+            color: var(--primary-navy);
         }
 
         /* Footer */
