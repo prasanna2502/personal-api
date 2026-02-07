@@ -348,43 +348,6 @@
         html {
             scroll-behavior: smooth;
         }
-
-        /* Photo Gallery */
-        .photo-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .photo-item {
-            position: relative;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .photo-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(15, 23, 42, 0.18);
-        }
-
-        .photo-item picture,
-        .photo-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            border: 4px solid rgba(255,255,255,0.85);
-        }
-
-        @media (max-width: 768px) {
-            .photo-gallery {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-        }
     </style>
 </head>
 <body>
@@ -395,12 +358,10 @@
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#life">Life Story</a></li>
-                <li><a href="#photos">Photos</a></li>
                 <li><a href="#work">Work</a></li>
                 <li><a href="#success">Success</a></li>
                 <li><a href="#communication">Communication</a></li>
                 <li><a href="#strengths">Strengths</a></li>
-                <li><a href="musings/">Musings</a></li>
             </ul>
         </div>
     </nav>
@@ -419,52 +380,6 @@
             <div class="section-header">
                 <span class="section-icon">🧩</span>
                 <h2 class="section-title">About Me</h2>
-            </div>
-            <div class="photo-gallery">
-                <div class="photo-item">
-                    <picture>
-                        <img
-                          src="images/jay-orange-jacket-1200.jpg"
-                          srcset="images/jay-orange-jacket-320.jpg 320w, images/jay-orange-jacket-640.jpg 640w, images/jay-orange-jacket-1200.jpg 1200w"
-                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 450px"
-                          alt="Jay in an orange jacket, smiling outdoors"
-                          loading="lazy"
-                          decoding="async">
-                    </picture>
-                </div>
-                <div class="photo-item">
-                    <picture>
-                        <img
-                          src="images/jay-family-dandelion-1200.jpg"
-                          srcset="images/jay-family-dandelion-320.jpg 320w, images/jay-family-dandelion-640.jpg 640w, images/jay-family-dandelion-1200.jpg 1200w"
-                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 450px"
-                          alt="Jay with his family exploring nature, kids playing with a dandelion"
-                          loading="lazy"
-                          decoding="async">
-                    </picture>
-                </div>
-                <div class="photo-item">
-                    <picture>
-                        <img
-                          src="images/jay-family-selfie-1200.jpg"
-                          srcset="images/jay-family-selfie-320.jpg 320w, images/jay-family-selfie-640.jpg 640w, images/jay-family-selfie-1200.jpg 1200w"
-                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 450px"
-                          alt="Jay, Nizha, and their baby enjoying quality family time"
-                          loading="lazy"
-                          decoding="async">
-                    </picture>
-                </div>
-                <div class="photo-item">
-                    <picture>
-                        <img
-                          src="images/jay-family-theme-park-1200.jpg"
-                          srcset="images/jay-family-theme-park-320.jpg 320w, images/jay-family-theme-park-640.jpg 640w, images/jay-family-theme-park-1200.jpg 1200w"
-                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 450px"
-                          alt="Jay and his twin daughters having fun at a theme park"
-                          loading="lazy"
-                          decoding="async">
-                    </picture>
-                </div>
             </div>
             <div class="content-card">
                 <p>Hi! I'm Prasanna Kumar, though most people call me Jay. I'm an Engineering Manager at Meta Reality Labs, and I thrive at the intersection of technology and business—specifically bringing together the right people to tackle complex problems where success isn't guaranteed. That uncertainty is what keeps me hooked; I love the challenge of navigating ambiguity and building solutions that matter. What truly energizes me, though, is helping people on their journey to become the best version of themselves—there's nothing more rewarding than watching someone grow and succeed in their own way.</p>
